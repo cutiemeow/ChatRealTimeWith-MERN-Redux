@@ -1,12 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Login from './conponents/login/';
+import Register from './conponents/register/';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
     <div className="App">
-      <Login></Login>
+      <Router>
+        <Route exact path = "/" component = {Login} />
+        <Route path = "/login" conponent = {Login} />
+        <Route path = "/register" component = {Register} />
+      </Router>
+
     </div>
   );
 }
